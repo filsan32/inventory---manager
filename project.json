@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 45000,
+      "quantity": 20,
+      "id": "1"
+    },
+    {
+      "id": "d665",
+      "name": "Hair oil",
+      "category": "Haircare",
+      "price": 400,
+      "quantity": 20
+    },
+    {
+      "id": "a595",
+      "name": "smartwatch",
+      "category": "Wearables",
+      "price": 4500,
+      "quantity": 7
+    }
+  ]
+}

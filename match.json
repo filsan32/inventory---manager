@@ -1,0 +1,28 @@
+{
+  "careers": [
+    {
+      "id": 1,
+      "type": "creative",
+      "career": "Graphic Designer",
+      "description": "Create visuals, logos, and design content."
+    },
+    {
+      "id": 2,
+      "type": "organizing",
+      "career": "Event Planner",
+      "description": "Plan and manage social or business events."
+    },
+    {
+      "id": 3,
+      "type": "tech",
+      "career": "Web Developer",
+      "description": "Build websites and applications."
+    },
+    {
+      "id": 4,
+      "type": "helping",
+      "career": "Social Worker",
+      "description": "Support and empower communities."
+    }
+  ]
+}

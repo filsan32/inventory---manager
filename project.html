@@ -1,0 +1,174 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+<body class="bg-gray-50 text-gray-900">
+   <!-- Responsive Header -->
+  <header class="bg-indigo-600 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-2xl font-bold tracking-wide">📦 InventoryPro</div>
+
+      <!-- Desktop Nav -->
+       <nav class="hidden md:flex space-x-6 text-sm font-medium items-center">
+  <a href="#home" class="flex items-center gap-1 hover:text-gray-200">
+    <i data-feather="home"></i> Home
+  </a>
+  <a href="#services" class="flex items-center gap-1 hover:text-gray-200">
+    <i data-feather="briefcase"></i> Services
+  </a>
+  <a href="#about" class="flex items-center gap-1 hover:text-gray-200">
+    <i data-feather="info"></i> About
+  </a>
+  <a href="#contact" class="flex items-center gap-1 hover:text-gray-200">
+    <i data-feather="mail"></i> Contact
+  </a>
+</nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M3 6h14M3 10h14M3 14h14" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+  <a href="#home" class="flex items-center gap-1 hover:text-gray-300">
+    <i data-feather="home"></i> Home
+  </a>
+  <a href="#services" class="flex items-center gap-1 hover:text-gray-300">
+    <i data-feather="briefcase"></i> Services
+  </a>
+  <a href="#about" class="flex items-center gap-1 hover:text-gray-300">
+    <i data-feather="info"></i> About
+  </a>
+  <a href="#contact" class="flex items-center gap-1 hover:text-gray-300">
+    <i data-feather="mail"></i> Contact
+  </a>
+</div>
+
+    
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <a href="#home" class="block py-2 hover:text-gray-300">Home</a>
+      <a href="#services" class="block py-2 hover:text-gray-300">Services</a>
+      <a href="#about" class="block py-2 hover:text-gray-300">About</a>
+      <a href="#contact" class="block py-2 hover:text-gray-300">Contact</a>
+    </div>
+  </header>
+  <!-- Main App -->
+  <main class="max-w-4xl mx-auto bg-white mt-8 rounded shadow p-6" id="home">
+    <h1 class="text-3xl font-bold mb-6 text-center text-indigo-600">Inventory Manager</h1>
+
+
+  <div class="max-w-4xl mx-auto p-6">
+    <!-- Add Product Form -->
+    <form id="productForm" class="bg-white p-4 rounded shadow mb-6 space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <input type="text" id="name" placeholder="Product Name" class="border p-2 rounded" required />
+        <input type="text" id="category" placeholder="Category" class="border p-2 rounded" required />
+        <input type="number" id="price" placeholder="Price" class="border p-2 rounded" required />
+        <input type="number" id="quantity" placeholder="Quantity" class="border p-2 rounded" required />
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Product</button>
+     
+    </form>
+    <!-- Dashboard Summary -->
+<div class="bg-white p-4 rounded shadow mb-6 grid grid-cols-3 text-center gap-4">
+  <div>
+    <p class="text-xl font-bold" id="totalProducts">0</p>
+    <p>Total Products</p>
+  </div>
+  <div>
+    <p class="text-xl font-bold" id="totalQuantity">0</p>
+    <p>Total Quantity</p>
+  </div>
+  <div>
+    <p class="text-xl font-bold" id="totalValue">Ksh 0</p>
+    <p>Total Value</p>
+  </div>
+</div>
+    <!-- Search Bar -->
+<div class="mb-4">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search by name or category..."
+    class="w-full border p-2 rounded"
+  />
+</div>
+
+    <!-- Inventory Table -->
+    <table class="w-full table-auto bg-white rounded shadow overflow-hidden">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-2">Name</th>
+          <th class="p-2">Category</th>
+          <th class="p-2">Price</th>
+          <th class="p-2">Quantity</th>
+          <th class="p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryBody">
+        <!-- Items will be injected here -->
+      </tbody>
+    </table>
+  </div>
+  <footer class="bg-indigo-700 shadow-md text-white mt-10">
+  <div class="max-w-6xl mx-auto px-20 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
+      <!-- Branding -->
+      <div>
+        <h2 class="text-2xl font-bold">📦 InventoryPro</h2>
+        <p class="text-sm text-indigo-200">Manage your inventory effortlessly</p>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-6 text-white text-xl ">
+        <a href="mailto:you@example.com" target="_blank" class="hover:text-indigo-300" title="Email">
+          <i data-feather="mail"></i>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="hover:text-indigo-300" title="GitHub">
+          <i data-feather="github"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="hover:text-indigo-300" title="Facebook">
+          <i data-feather="facebook"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="hover:text-indigo-300" title="Instagram">
+          <i data-feather="instagram"></i>
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank" class="hover:text-indigo-300" title="WhatsApp">
+          <i data-feather="message-circle"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="hover:text-indigo-300" title="LinkedIn">
+          <i data-feather="linkedin"></i>
+        </a>
+      </div>
+    </div>
+    
+
+    <!-- Bottom line -->
+    <div class="mt-6 text-center text-sm text-indigo-200 view width" >
+      &copy; 2025 InventoryPro. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+ 
+<script>
+  feather.replace(); // Initializes all feather icons
+
+  // Your existing JavaScript below
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
